@@ -11,11 +11,6 @@ auto comb(auto n, auto k) {
     decltype(n) result = 1;
     decltype(n) nom = n, denom = 1;
 
-    /* Cyklus provedeme pro ‹nom_f› v klesajícím rozsahu ⟦⟨n, k)⟧
-     * resp. ⟦⟨n, n - k)⟧, podle toho která spodní mez je větší.
-     * Protože jednotlivé mezihodnoty na spodní hranici iterace
-     * nezávisí, je jistě výhodnější provést méně iterací. */
-
     while (nom > std::max(k, n - k))
     {
         assert(denom <= std::min(k, n - k));
